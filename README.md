@@ -51,22 +51,22 @@ Below is an example of what the data in a log file, **2018-11-12-events.json**, 
 ![Star Schema for Song Play Analysis!](./image/song_play_analysis_with_star_schema.png "Star Schema for Song Play Analysis")
 
 ## <br>Data Lake to store extracted dimentional tables
->**"s3a://udacity-de-sparkify-data-warehouse-2/artists" <br>
->"s3a://udacity-de-sparkify-data-warehouse-2/songs" <br>
->"s3a://udacity-de-sparkify-data-warehouse-2/time" <br>
->"s3a://udacity-de-sparkify-data-warehouse-2/users" <br>
->"s3a://udacity-de-sparkify-data-warehouse-2/songplays"**<br>
+>**"s3a://udacity-de-sparkify-data-lake/artists" <br>
+>"s3a://udacity-de-sparkify-data-lake/songs" <br>
+>"s3a://udacity-de-sparkify-data-lake/time" <br>
+>"s3a://udacity-de-sparkify-data-lake/users" <br>
+>"s3a://udacity-de-sparkify-data-lake/songplays"**<br>
 
 
 ## <br>Project Files
 
 In addition to the data files, the project workspace includes 5 files:
 
-**1. dl.cfg**                    contains the configuration settings for the database.<br>
-**2. create_bucket.py**
-**3. etl.py**  loading song data and log data from S3 to Redshift, transforms data into a set of dimensional tables <br>
-**4. etl.ipynb**                 used to design ETL pipelines <br>
-**5. README.md**                 provides project info<br>
+**1. dl.cfg**                    Contains the Secret Key for ASW access<br>
+**2. create_bucket.py**          Create bucket in AWS S3 to store the extracted dimentional tables.<br>
+**3. etl.py**                    Loading song data and log data from S3 to Spark, transforms data into a set of dimensional tables, then save the table back to S3 <br>
+**4. etl.ipynb**                 Used to design ETL pipelines <br>
+**5. README.md**                 Provides project info<br>
 
 ## Configuration
 
@@ -86,10 +86,10 @@ secret = <br>
 1. Set **key** and **secrect** in **dwh.cfg** file <br><br>
 
 2. Run **create_bucket.py**<br>
-    python create_bucket.py <br> <br>
+    **python create_bucket.py** <br> <br>
     
 3. Use following command to start ETL process <br>
-    python etl.py <br> <br>
+    **python etl.py** <br> <br>
    
     
 ## Author
